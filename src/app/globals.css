@@ -1,6 +1,54 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Estilos para ecuaciones matemáticas */
+.math-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Times New Roman", serif;
+  line-height: 1;
+}
+
+.math-fraction {
+  display: inline-flex;
+  flex-direction: column;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+  margin: 0 0.3em;
+}
+
+.math-numerator {
+  display: block;
+  border-bottom: 2px solid currentColor;
+  padding-bottom: 0.2em;
+  margin-bottom: 0.1em;
+  font-style: italic;
+}
+
+.math-denominator {
+  display: block;
+  padding-top: 0.2em;
+  margin-top: 0.1em;
+  font-style: italic;
+}
+
+.math-equation em {
+  font-style: italic;
+  font-family: "Times New Roman", serif;
+}
+
+.math-equation sub {
+  font-size: 0.6em;
+  vertical-align: sub;
+}
+
+.math-equation sup {
+  font-size: 0.6em;
+  vertical-align: super;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

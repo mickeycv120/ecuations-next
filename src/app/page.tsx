@@ -1,4 +1,9 @@
 import Link from "next/link";
+import {
+  SIREquations,
+  R0Equation,
+  EulerEquations,
+} from "@/components/math-equation";
 
 export default function HomePage() {
   return (
@@ -91,52 +96,7 @@ export default function HomePage() {
               sistema de ecuaciones diferenciales ordinarias acopladas:
             </p>
 
-            <div className="bg-gradient-to-r from-gray-900 via-slate-800 to-gray-900 text-white p-10 rounded-xl shadow-2xl mb-8 max-w-3xl mx-auto border border-gray-600">
-              <div className="space-y-6">
-                <div className="text-center text-gray-300 text-lg font-semibold mb-6 tracking-wide">
-                  SISTEMA DE ECUACIONES DIFERENCIALES ORDINARIAS
-                </div>
-                <div className="space-y-5 font-mono text-2xl">
-                  <div className="bg-blue-900/30 border-l-4 border-blue-400 pl-6 py-4 rounded-r-lg">
-                    <span className="text-blue-300 font-bold">dS/dt</span>
-                    <span className="text-white mx-3">=</span>
-                    <span className="text-red-300">-β</span>
-                    <span className="text-white mx-2">×</span>
-                    <span className="text-blue-300">S</span>
-                    <span className="text-white mx-2">×</span>
-                    <span className="text-red-300">I</span>
-                    <span className="text-white mx-2">/</span>
-                    <span className="text-yellow-300">N</span>
-                  </div>
-                  <div className="bg-red-900/30 border-l-4 border-red-400 pl-6 py-4 rounded-r-lg">
-                    <span className="text-red-300 font-bold">dI/dt</span>
-                    <span className="text-white mx-3">=</span>
-                    <span className="text-red-300">β</span>
-                    <span className="text-white mx-2">×</span>
-                    <span className="text-blue-300">S</span>
-                    <span className="text-white mx-2">×</span>
-                    <span className="text-red-300">I</span>
-                    <span className="text-white mx-2">/</span>
-                    <span className="text-yellow-300">N</span>
-                    <span className="text-white mx-3">-</span>
-                    <span className="text-green-300">γ</span>
-                    <span className="text-white mx-2">×</span>
-                    <span className="text-red-300">I</span>
-                  </div>
-                  <div className="bg-green-900/30 border-l-4 border-green-400 pl-6 py-4 rounded-r-lg">
-                    <span className="text-green-300 font-bold">dR/dt</span>
-                    <span className="text-white mx-3">=</span>
-                    <span className="text-green-300">γ</span>
-                    <span className="text-white mx-2">×</span>
-                    <span className="text-red-300">I</span>
-                  </div>
-                </div>
-                <div className="text-center text-gray-400 text-sm mt-6 italic border-t border-gray-600 pt-4">
-                  Modelo SIR adaptado para propagación de malware en redes
-                  digitales
-                </div>
-              </div>
-            </div>
+            <SIREquations />
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -239,23 +199,7 @@ export default function HomePage() {
           </h2>
 
           <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 backdrop-blur-sm rounded-xl shadow-2xl p-8 mb-8 border border-purple-300/20">
-              <div className="text-center">
-                <div className="text-gray-300 text-lg font-semibold mb-4 tracking-wider uppercase">
-                  Número Básico de Reproducción
-                </div>
-                <div className="bg-white/10 rounded-lg p-6 mb-4">
-                  <div className="text-5xl font-mono font-bold mb-2 text-yellow-300 tracking-wider">
-                    R₀ = β / γ
-                  </div>
-                  <div className="h-px bg-gradient-to-r from-transparent via-white/30 to-transparent my-4"></div>
-                  <p className="text-lg text-blue-100 leading-relaxed">
-                    Número promedio de infecciones secundarias producidas por un
-                    sistema infectado en una población completamente susceptible
-                  </p>
-                </div>
-              </div>
-            </div>
+            <R0Equation />
 
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-gradient-to-br from-yellow-900/40 to-orange-900/40 backdrop-blur-sm rounded-xl p-6 border border-yellow-400/30">
@@ -340,97 +284,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-r from-slate-900 via-gray-900 to-slate-900 text-white p-8 rounded-xl shadow-2xl border border-slate-600">
-              <h3 className="font-bold text-blue-300 mb-4 text-xl text-center tracking-wide">
-                🧮 MÉTODO DE EULER EXPLÍCITO
-              </h3>
-              <p className="text-gray-300 mb-6 text-center">
-                Discretización temporal de primer orden con paso fijo Δt:
-              </p>
-              <div className="space-y-4 font-mono text-lg">
-                <div className="bg-blue-900/20 border border-blue-500/30 p-4 rounded-lg">
-                  <div className="text-blue-300 font-semibold mb-2">
-                    Susceptibles:
-                  </div>
-                  <div className="pl-4">
-                    <span className="text-blue-200">S</span>
-                    <sub className="text-blue-400">n+1</sub>
-                    <span className="text-white mx-2">=</span>
-                    <span className="text-blue-200">S</span>
-                    <sub className="text-blue-400">n</sub>
-                    <span className="text-white mx-2">+</span>
-                    <span className="text-yellow-300">Δt</span>
-                    <span className="text-white mx-2">×</span>
-                    <span className="text-gray-300">(</span>
-                    <span className="text-red-300">-β</span>
-                    <span className="text-white mx-1">×</span>
-                    <span className="text-blue-200">S</span>
-                    <sub className="text-blue-400">n</sub>
-                    <span className="text-white mx-1">×</span>
-                    <span className="text-red-200">I</span>
-                    <sub className="text-red-400">n</sub>
-                    <span className="text-white mx-1">/</span>
-                    <span className="text-yellow-200">N</span>
-                    <span className="text-gray-300">)</span>
-                  </div>
-                </div>
-                <div className="bg-red-900/20 border border-red-500/30 p-4 rounded-lg">
-                  <div className="text-red-300 font-semibold mb-2">
-                    Infectadas:
-                  </div>
-                  <div className="pl-4">
-                    <span className="text-red-200">I</span>
-                    <sub className="text-red-400">n+1</sub>
-                    <span className="text-white mx-2">=</span>
-                    <span className="text-red-200">I</span>
-                    <sub className="text-red-400">n</sub>
-                    <span className="text-white mx-2">+</span>
-                    <span className="text-yellow-300">Δt</span>
-                    <span className="text-white mx-2">×</span>
-                    <span className="text-gray-300">(</span>
-                    <span className="text-red-300">β</span>
-                    <span className="text-white mx-1">×</span>
-                    <span className="text-blue-200">S</span>
-                    <sub className="text-blue-400">n</sub>
-                    <span className="text-white mx-1">×</span>
-                    <span className="text-red-200">I</span>
-                    <sub className="text-red-400">n</sub>
-                    <span className="text-white mx-1">/</span>
-                    <span className="text-yellow-200">N</span>
-                    <span className="text-white mx-2">-</span>
-                    <span className="text-green-300">γ</span>
-                    <span className="text-white mx-1">×</span>
-                    <span className="text-red-200">I</span>
-                    <sub className="text-red-400">n</sub>
-                    <span className="text-gray-300">)</span>
-                  </div>
-                </div>
-                <div className="bg-green-900/20 border border-green-500/30 p-4 rounded-lg">
-                  <div className="text-green-300 font-semibold mb-2">
-                    Recuperadas:
-                  </div>
-                  <div className="pl-4">
-                    <span className="text-green-200">R</span>
-                    <sub className="text-green-400">n+1</sub>
-                    <span className="text-white mx-2">=</span>
-                    <span className="text-green-200">R</span>
-                    <sub className="text-green-400">n</sub>
-                    <span className="text-white mx-2">+</span>
-                    <span className="text-yellow-300">Δt</span>
-                    <span className="text-white mx-2">×</span>
-                    <span className="text-gray-300">(</span>
-                    <span className="text-green-300">γ</span>
-                    <span className="text-white mx-1">×</span>
-                    <span className="text-red-200">I</span>
-                    <sub className="text-red-400">n</sub>
-                    <span className="text-gray-300">)</span>
-                  </div>
-                </div>
-              </div>
-              <div className="text-center text-gray-400 text-sm mt-6 border-t border-gray-700 pt-4 italic">
-                Esquema numérico estable con complejidad computacional O(n)
-              </div>
-            </div>
+            <EulerEquations />
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
