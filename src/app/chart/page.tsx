@@ -18,9 +18,6 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 
-export const description =
-  "Simulación de propagación de virus informático usando ecuaciones diferenciales";
-
 // Parámetros del modelo SIR para virus informático
 const POPULATION = 10000; // Total de computadoras
 const BETA = 0.6; // Tasa de transmisión alta (porque no hay antivirus)

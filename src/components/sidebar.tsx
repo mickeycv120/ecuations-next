@@ -12,10 +12,8 @@ import {
   Bell,
   ChartLine,
   CreditCard,
-  Home,
   HomeIcon,
   LogOutIcon,
-  SwordsIcon,
   User,
   ZapIcon,
 } from "lucide-react";
