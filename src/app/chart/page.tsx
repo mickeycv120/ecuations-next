@@ -147,19 +147,19 @@ export default function ChartPage() {
   const currentPoint = currentData[currentData.length - 1];
 
   return (
-    <div className="w-full p-4">
+    <div className="w-full p-4 pt-6 sm:pt-4">
       <Card className="w-full">
         <CardHeader>
-          <CardTitle className="text-2xl font-bold">
+          <CardTitle className="text-xl sm:text-2xl font-bold">
             Propagación de Virus Informático - Simulación en Tiempo Real
           </CardTitle>
-          <CardDescription className="text-lg">
+          <CardDescription className="text-base sm:text-lg">
             Modelo SIR (Susceptible-Infectado-Recuperado) - Día{" "}
             {currentPoint?.time?.toFixed(1) || "0.0"}
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="w-full h-[500px]">
+          <div className="w-full h-[400px] sm:h-[500px]">
             <ChartContainer config={chartConfig} className="w-full h-full">
               <LineChart
                 data={currentData}
@@ -224,16 +224,16 @@ export default function ChartPage() {
               </LineChart>
             </ChartContainer>
           </div>
-          <div className="flex justify-center gap-4 mt-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mt-4">
             <button
               onClick={resetSimulation}
-              className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+              className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors text-sm sm:text-base"
             >
               Reiniciar Simulación
             </button>
             <button
               onClick={() => setIsRunning(!isRunning)}
-              className={`px-4 py-2 rounded transition-colors ${
+              className={`px-4 py-2 rounded transition-colors text-sm sm:text-base ${
                 isRunning
                   ? "bg-red-500 hover:bg-red-600 text-white"
                   : "bg-green-500 hover:bg-green-600 text-white"
@@ -244,34 +244,36 @@ export default function ChartPage() {
           </div>
         </CardContent>
         <CardFooter className="flex-col items-start gap-4 text-sm">
-          <div className="flex gap-2 leading-none font-medium text-lg">
+          <div className="flex gap-2 leading-none font-medium text-base sm:text-lg">
             Pico de infección: {maxInfected} computadoras{" "}
             <TrendingUp className="h-4 w-4" />
           </div>
-          <div className="text-muted-foreground leading-none text-base">
+          <div className="text-muted-foreground leading-none text-sm sm:text-base">
             Parámetros: β={BETA} (tasa transmisión), γ={GAMMA} (tasa
             recuperación), N={POPULATION} computadoras
           </div>
-          <div className="grid grid-cols-3 gap-4 w-full mt-4">
-            <div className="text-center p-2 bg-blue-50 rounded">
-              <div className="font-bold text-blue-700">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 w-full mt-4">
+            <div className="text-center p-3 sm:p-2 bg-blue-50 rounded">
+              <div className="font-bold text-blue-700 text-sm sm:text-base">
                 Susceptibles Actuales
               </div>
-              <div className="text-xl text-blue-600">
+              <div className="text-lg sm:text-xl text-blue-600">
                 {currentPoint?.susceptible || POPULATION - 1}
               </div>
             </div>
-            <div className="text-center p-2 bg-red-50 rounded">
-              <div className="font-bold text-red-700">Infectados Actuales</div>
-              <div className="text-xl text-red-600">
+            <div className="text-center p-3 sm:p-2 bg-red-50 rounded">
+              <div className="font-bold text-red-700 text-sm sm:text-base">
+                Infectados Actuales
+              </div>
+              <div className="text-lg sm:text-xl text-red-600">
                 {currentPoint?.infected || 1}
               </div>
             </div>
-            <div className="text-center p-2 bg-teal-50 rounded">
-              <div className="font-bold text-teal-700">
+            <div className="text-center p-3 sm:p-2 bg-teal-50 rounded">
+              <div className="font-bold text-teal-700 text-sm sm:text-base">
                 Recuperados Actuales
               </div>
-              <div className="text-xl text-teal-600">
+              <div className="text-lg sm:text-xl text-teal-600">
                 {currentPoint?.recovered || 0}
               </div>
             </div>

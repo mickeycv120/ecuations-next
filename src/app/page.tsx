@@ -8,22 +8,22 @@ import {
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6 py-12 space-y-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12 space-y-8 sm:space-y-16 pt-6 sm:pt-12">
         {/* Hero Section */}
         <header className="text-center">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight px-2">
             Modelado Matemático de la Propagación
             <span className="block text-blue-600">de un Virus Informático</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-4">
             Análisis riguroso de la propagación de malware en redes de
             computadoras utilizando el modelo epidemiológico SIR y ecuaciones
             diferenciales ordinarias
           </p>
-          <div className="mt-8">
+          <div className="mt-6 sm:mt-8 px-4">
             <Link
               href="/chart"
-              className="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              className="inline-block bg-blue-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 w-full sm:w-auto text-center"
             >
               🚀 Explorar Simulación Interactiva
             </Link>
@@ -31,12 +31,12 @@ export default function HomePage() {
         </header>
 
         {/* ¿Qué es el modelo SIR? */}
-        <section className="bg-white rounded-xl shadow-lg border p-10">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
+        <section className="bg-white rounded-xl shadow-lg border p-6 sm:p-8 lg:p-10">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">
             ¿Qué es el Modelo SIR?
           </h2>
-          <div className="mb-8">
-            <p className="text-lg text-gray-700 mb-6 text-center max-w-4xl mx-auto">
+          <div className="mb-6 sm:mb-8">
+            <p className="text-base sm:text-lg text-gray-700 mb-6 text-center max-w-4xl mx-auto">
               El modelo SIR es un marco matemático epidemiológico que divide la
               población en tres estados mutuamente excluyentes. Adaptado al
               contexto de seguridad informática, modela la dinámica de
@@ -44,39 +44,45 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-blue-50 border-2 border-blue-200 p-6 rounded-xl text-center">
-              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white font-bold text-2xl">S</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            <div className="bg-blue-50 border-2 border-blue-200 p-4 sm:p-6 rounded-xl text-center">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <span className="text-white font-bold text-xl sm:text-2xl">
+                  S
+                </span>
               </div>
-              <h3 className="font-bold text-blue-800 mb-3 text-xl">
+              <h3 className="font-bold text-blue-800 mb-2 sm:mb-3 text-lg sm:text-xl">
                 Susceptibles
               </h3>
-              <p className="text-blue-700 leading-relaxed">
+              <p className="text-blue-700 leading-relaxed text-sm sm:text-base">
                 Computadoras vulnerables sin protección antivirus que pueden ser
                 infectadas al entrar en contacto con sistemas comprometidos
               </p>
             </div>
-            <div className="bg-red-50 border-2 border-red-200 p-6 rounded-xl text-center">
-              <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white font-bold text-2xl">I</span>
+            <div className="bg-red-50 border-2 border-red-200 p-4 sm:p-6 rounded-xl text-center">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <span className="text-white font-bold text-xl sm:text-2xl">
+                  I
+                </span>
               </div>
-              <h3 className="font-bold text-red-800 mb-3 text-xl">
+              <h3 className="font-bold text-red-800 mb-2 sm:mb-3 text-lg sm:text-xl">
                 Infectadas
               </h3>
-              <p className="text-red-700 leading-relaxed">
+              <p className="text-red-700 leading-relaxed text-sm sm:text-base">
                 Sistemas comprometidos que contienen malware activo y pueden
                 transmitir la infección a otros dispositivos de la red
               </p>
             </div>
-            <div className="bg-green-50 border-2 border-green-200 p-6 rounded-xl text-center">
-              <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white font-bold text-2xl">R</span>
+            <div className="bg-green-50 border-2 border-green-200 p-4 sm:p-6 rounded-xl text-center">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <span className="text-white font-bold text-xl sm:text-2xl">
+                  R
+                </span>
               </div>
-              <h3 className="font-bold text-green-800 mb-3 text-xl">
+              <h3 className="font-bold text-green-800 mb-2 sm:mb-3 text-lg sm:text-xl">
                 Recuperadas
               </h3>
-              <p className="text-green-700 leading-relaxed">
+              <p className="text-green-700 leading-relaxed text-sm sm:text-base">
                 Computadoras que han sido limpiadas y patched, adquiriendo
                 inmunidad temporal contra el mismo tipo de malware
               </p>
@@ -85,13 +91,13 @@ export default function HomePage() {
         </section>
 
         {/* Sistema de Ecuaciones Diferenciales */}
-        <section className="bg-white rounded-xl shadow-lg border p-10">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
+        <section className="bg-white rounded-xl shadow-lg border p-6 sm:p-8 lg:p-10">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">
             Sistema de Ecuaciones Diferenciales
           </h2>
 
-          <div className="mb-8">
-            <p className="text-lg text-gray-700 mb-6 text-center">
+          <div className="mb-6 sm:mb-8">
+            <p className="text-base sm:text-lg text-gray-700 mb-6 text-center px-4">
               El modelo SIR se describe matemáticamente mediante el siguiente
               sistema de ecuaciones diferenciales ordinarias acopladas:
             </p>
@@ -99,12 +105,12 @@ export default function HomePage() {
             <SIREquations />
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-blue-50 p-6 rounded-lg">
-              <h3 className="font-bold text-blue-800 mb-4 text-xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+            <div className="bg-blue-50 p-4 sm:p-6 rounded-lg">
+              <h3 className="font-bold text-blue-800 mb-3 sm:mb-4 text-lg sm:text-xl">
                 📊 Parámetros del Modelo
               </h3>
-              <ul className="space-y-3 text-gray-700">
+              <ul className="space-y-2 sm:space-y-3 text-gray-700 text-sm sm:text-base">
                 <li>
                   <strong>β (beta):</strong> Tasa de transmisión del virus
                   (contactos infectivos por unidad de tiempo)
@@ -118,11 +124,11 @@ export default function HomePage() {
                 </li>
               </ul>
             </div>
-            <div className="bg-green-50 p-6 rounded-lg">
-              <h3 className="font-bold text-green-800 mb-4 text-xl">
+            <div className="bg-green-50 p-4 sm:p-6 rounded-lg">
+              <h3 className="font-bold text-green-800 mb-3 sm:mb-4 text-lg sm:text-xl">
                 🎯 Condiciones Iniciales
               </h3>
-              <ul className="space-y-3 text-gray-700">
+              <ul className="space-y-2 sm:space-y-3 text-gray-700 text-sm sm:text-base">
                 <li>
                   <strong>S(0) = N - I₀:</strong> Casi toda la población es
                   susceptible inicialmente
@@ -144,17 +150,17 @@ export default function HomePage() {
         </section>
 
         {/* Interpretación de las Ecuaciones */}
-        <section className="bg-white rounded-xl shadow-lg border p-10">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
+        <section className="bg-white rounded-xl shadow-lg border p-6 sm:p-8 lg:p-10">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">
             Interpretación Física de las Ecuaciones
           </h2>
 
-          <div className="space-y-8">
-            <div className="border-l-8 border-blue-500 bg-blue-50 p-6 rounded-r-lg">
-              <h3 className="font-bold text-blue-800 mb-3 text-xl">
+          <div className="space-y-6 sm:space-y-8">
+            <div className="border-l-4 sm:border-l-8 border-blue-500 bg-blue-50 p-4 sm:p-6 rounded-r-lg">
+              <h3 className="font-bold text-blue-800 mb-2 sm:mb-3 text-lg sm:text-xl">
                 📉 Ecuación de Susceptibles: dS/dt = -β × S × I / N
               </h3>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
                 La derivada negativa indica que el número de sistemas
                 susceptibles <em>decrece monotónicamente</em>. La tasa de
                 disminución es proporcional al producto S×I (ley de acción de
@@ -163,11 +169,11 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="border-l-8 border-red-500 bg-red-50 p-6 rounded-r-lg">
-              <h3 className="font-bold text-red-800 mb-3 text-xl">
+            <div className="border-l-4 sm:border-l-8 border-red-500 bg-red-50 p-4 sm:p-6 rounded-r-lg">
+              <h3 className="font-bold text-red-800 mb-2 sm:mb-3 text-lg sm:text-xl">
                 📈 Ecuación de Infectadas: dI/dt = β × S × I / N - γ × I
               </h3>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
                 Ecuación de balance con dos términos competitivos: el{" "}
                 <strong>flujo de entrada</strong>
                 βSI/N (nuevas infecciones) y el <strong>
@@ -178,11 +184,11 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="border-l-8 border-green-500 bg-green-50 p-6 rounded-r-lg">
-              <h3 className="font-bold text-green-800 mb-3 text-xl">
+            <div className="border-l-4 sm:border-l-8 border-green-500 bg-green-50 p-4 sm:p-6 rounded-r-lg">
+              <h3 className="font-bold text-green-800 mb-2 sm:mb-3 text-lg sm:text-xl">
                 📊 Ecuación de Recuperadas: dR/dt = γ × I
               </h3>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
                 La población recuperada <em>aumenta monotónicamente</em> a una
                 tasa directamente proporcional al número actual de infectados. γ
                 representa la eficacia del proceso de detección y limpieza del
@@ -193,8 +199,8 @@ export default function HomePage() {
         </section>
 
         {/* Número Básico de Reproducción */}
-        <section className="bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl shadow-lg p-10">
-          <h2 className="text-4xl font-bold mb-8 text-center">
+        <section className="bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl shadow-lg p-6 sm:p-8 lg:p-10">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 text-center">
             🔬 Número Básico de Reproducción (R₀)
           </h2>
 
@@ -266,17 +272,17 @@ export default function HomePage() {
         </section>
 
         {/* Método de Resolución Numérica */}
-        <section className="bg-white rounded-xl shadow-lg border p-10">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
+        <section className="bg-white rounded-xl shadow-lg border p-6 sm:p-8 lg:p-10">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">
             🔢 Método de Resolución Numérica
           </h2>
 
-          <div className="mb-8">
-            <div className="bg-amber-50 border border-amber-200 rounded-lg p-6 mb-6">
-              <h3 className="font-bold text-amber-800 mb-3 text-xl">
+          <div className="mb-6 sm:mb-8">
+            <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 sm:p-6 mb-4 sm:mb-6">
+              <h3 className="font-bold text-amber-800 mb-2 sm:mb-3 text-lg sm:text-xl">
                 ⚠️ Ausencia de Solución Analítica
               </h3>
-              <p className="text-amber-700">
+              <p className="text-amber-700 text-sm sm:text-base">
                 El sistema SIR es <strong>no-lineal</strong> debido al término
                 βSI, lo que impide encontrar soluciones analíticas cerradas. Se
                 requieren métodos numéricos para aproximar la evolución temporal
@@ -287,7 +293,7 @@ export default function HomePage() {
             <EulerEquations />
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
             <div className="bg-green-50 p-6 rounded-lg">
               <h4 className="font-bold mb-3 text-green-800">
                 ✅ Ventajas del Método
@@ -336,39 +342,53 @@ export default function HomePage() {
         </section>
 
         {/* Predicciones del Modelo */}
-        <section className="bg-white rounded-xl shadow-lg border p-10">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
+        <section className="bg-white rounded-xl shadow-lg border p-6 sm:p-8 lg:p-10">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">
             📈 Predicciones Clave del Modelo
           </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-red-50 border border-red-200 p-6 rounded-lg text-center">
-              <div className="text-3xl font-bold text-red-600 mb-2">~7,200</div>
-              <div className="text-red-800 font-semibold">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div className="bg-red-50 border border-red-200 p-4 sm:p-6 rounded-lg text-center">
+              <div className="text-2xl sm:text-3xl font-bold text-red-600 mb-2">
+                ~7,200
+              </div>
+              <div className="text-red-800 font-semibold text-sm sm:text-base">
                 Pico de Infección
               </div>
-              <div className="text-red-600 text-sm mt-2">
+              <div className="text-red-600 text-xs sm:text-sm mt-2">
                 Máximo número de sistemas comprometidos simultáneamente
               </div>
             </div>
-            <div className="bg-blue-50 border border-blue-200 p-6 rounded-lg text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">8-10</div>
-              <div className="text-blue-800 font-semibold">Días al Pico</div>
-              <div className="text-blue-600 text-sm mt-2">
+            <div className="bg-blue-50 border border-blue-200 p-4 sm:p-6 rounded-lg text-center">
+              <div className="text-2xl sm:text-3xl font-bold text-blue-600 mb-2">
+                8-10
+              </div>
+              <div className="text-blue-800 font-semibold text-sm sm:text-base">
+                Días al Pico
+              </div>
+              <div className="text-blue-600 text-xs sm:text-sm mt-2">
                 Tiempo hasta alcanzar el máximo de infectados
               </div>
             </div>
-            <div className="bg-green-50 border border-green-200 p-6 rounded-lg text-center">
-              <div className="text-3xl font-bold text-green-600 mb-2">~60</div>
-              <div className="text-green-800 font-semibold">Duración Total</div>
-              <div className="text-green-600 text-sm mt-2">
+            <div className="bg-green-50 border border-green-200 p-4 sm:p-6 rounded-lg text-center">
+              <div className="text-2xl sm:text-3xl font-bold text-green-600 mb-2">
+                ~60
+              </div>
+              <div className="text-green-800 font-semibold text-sm sm:text-base">
+                Duración Total
+              </div>
+              <div className="text-green-600 text-xs sm:text-sm mt-2">
                 Días hasta extinción práctica de la epidemia
               </div>
             </div>
-            <div className="bg-purple-50 border border-purple-200 p-6 rounded-lg text-center">
-              <div className="text-3xl font-bold text-purple-600 mb-2">72%</div>
-              <div className="text-purple-800 font-semibold">Ataque Total</div>
-              <div className="text-purple-600 text-sm mt-2">
+            <div className="bg-purple-50 border border-purple-200 p-4 sm:p-6 rounded-lg text-center">
+              <div className="text-2xl sm:text-3xl font-bold text-purple-600 mb-2">
+                72%
+              </div>
+              <div className="text-purple-800 font-semibold text-sm sm:text-base">
+                Ataque Total
+              </div>
+              <div className="text-purple-600 text-xs sm:text-sm mt-2">
                 Fracción final de la población infectada
               </div>
             </div>
@@ -376,17 +396,17 @@ export default function HomePage() {
         </section>
 
         {/* Aplicaciones */}
-        <section className="bg-white rounded-xl shadow-lg border p-10">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
+        <section className="bg-white rounded-xl shadow-lg border p-6 sm:p-8 lg:p-10">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">
             🌟 Aplicaciones del Modelo
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-blue-50 border border-blue-200 p-6 rounded-lg">
-              <h3 className="font-bold text-blue-800 mb-4 text-xl flex items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+            <div className="bg-blue-50 border border-blue-200 p-4 sm:p-6 rounded-lg">
+              <h3 className="font-bold text-blue-800 mb-3 sm:mb-4 text-lg sm:text-xl flex items-center">
                 🔒 Seguridad Informática
               </h3>
-              <ul className="space-y-3 text-blue-700">
+              <ul className="space-y-2 sm:space-y-3 text-blue-700 text-sm sm:text-base">
                 <li>
                   • <strong>Predicción de brotes:</strong> Anticipar la
                   propagación de nuevos malware
@@ -409,11 +429,11 @@ export default function HomePage() {
                 </li>
               </ul>
             </div>
-            <div className="bg-green-50 border border-green-200 p-6 rounded-lg">
-              <h3 className="font-bold text-green-800 mb-4 text-xl flex items-center">
+            <div className="bg-green-50 border border-green-200 p-4 sm:p-6 rounded-lg">
+              <h3 className="font-bold text-green-800 mb-3 sm:mb-4 text-lg sm:text-xl flex items-center">
                 🏥 Epidemiología Clásica
               </h3>
-              <ul className="space-y-3 text-green-700">
+              <ul className="space-y-2 sm:space-y-3 text-green-700 text-sm sm:text-base">
                 <li>
                   • <strong>Modelado de pandemias:</strong> COVID-19, influenza,
                   SARS
@@ -440,17 +460,17 @@ export default function HomePage() {
         </section>
 
         {/* Limitaciones del Modelo */}
-        <section className="bg-orange-50 border border-orange-200 rounded-xl p-10">
-          <h2 className="text-4xl font-bold text-orange-800 mb-8 text-center">
+        <section className="bg-orange-50 border border-orange-200 rounded-xl p-6 sm:p-8 lg:p-10">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-800 mb-6 sm:mb-8 text-center">
             ⚠️ Limitaciones y Supuestos del Modelo
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
             <div>
-              <h3 className="font-bold text-orange-800 mb-4 text-xl">
+              <h3 className="font-bold text-orange-800 mb-3 sm:mb-4 text-lg sm:text-xl">
                 🔶 Supuestos Simplificadores
               </h3>
-              <ul className="space-y-2 text-orange-700">
+              <ul className="space-y-2 text-orange-700 text-sm sm:text-base">
                 <li>
                   • <strong>Mezcla homogénea:</strong> Todos los sistemas tienen
                   igual probabilidad de contacto
@@ -470,10 +490,10 @@ export default function HomePage() {
               </ul>
             </div>
             <div>
-              <h3 className="font-bold text-orange-800 mb-4 text-xl">
+              <h3 className="font-bold text-orange-800 mb-3 sm:mb-4 text-lg sm:text-xl">
                 🔶 Aspectos No Modelados
               </h3>
-              <ul className="space-y-2 text-orange-700">
+              <ul className="space-y-2 text-orange-700 text-sm sm:text-base">
                 <li>
                   • <strong>Topología de red:</strong> Estructura física de
                   conexiones
@@ -494,8 +514,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="mt-6 bg-white p-4 rounded-lg border border-orange-300">
-            <p className="text-orange-800 text-center">
+          <div className="mt-4 sm:mt-6 bg-white p-3 sm:p-4 rounded-lg border border-orange-300">
+            <p className="text-orange-800 text-center text-sm sm:text-base">
               <strong>Nota:</strong> A pesar de estas limitaciones, el modelo
               SIR proporciona
               <em>insights</em> valiosos y sirve como base para modelos más
@@ -505,23 +525,23 @@ export default function HomePage() {
         </section>
 
         {/* Call to Action Final */}
-        <section className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 text-white rounded-xl shadow-2xl p-12 text-center">
-          <h2 className="text-4xl font-bold mb-6">
+        <section className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 text-white rounded-xl shadow-2xl p-8 sm:p-10 lg:p-12 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">
             🎯 Experimenta con la Simulación Interactiva
           </h2>
-          <p className="text-xl mb-8 opacity-90 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 opacity-90 max-w-3xl mx-auto leading-relaxed px-4">
             Explora el comportamiento dinámico del modelo SIR modificando
             parámetros en tiempo real. Observa cómo pequeños cambios en β y γ
             pueden alterar dramáticamente la evolución de la epidemia.
           </p>
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             <Link
               href="/chart"
-              className="inline-block bg-white text-indigo-600 px-10 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300 font-bold text-xl shadow-lg hover:shadow-xl transform hover:-translate-y-2 hover:scale-105"
+              className="inline-block bg-white text-indigo-600 px-8 sm:px-10 py-3 sm:py-4 rounded-xl hover:bg-gray-100 transition-all duration-300 font-bold text-lg sm:text-xl shadow-lg hover:shadow-xl transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto"
             >
               🚀 Iniciar Simulación Interactiva
             </Link>
-            <p className="text-sm opacity-75">
+            <p className="text-xs sm:text-sm opacity-75 px-4">
               Controla β, γ, N e I₀ • Visualización en tiempo real • Cálculo
               automático de R₀
             </p>
@@ -529,8 +549,8 @@ export default function HomePage() {
         </section>
 
         {/* Footer académico */}
-        <footer className="text-center text-gray-500 border-t pt-8">
-          <p className="text-sm">
+        <footer className="text-center text-gray-500 border-t pt-6 sm:pt-8">
+          <p className="text-xs sm:text-sm">
             Proyecto Académico • Ecuaciones Diferenciales • Modelo SIR Digital
           </p>
           <p className="text-xs mt-2">

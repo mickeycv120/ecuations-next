@@ -50,14 +50,18 @@ export function AppSidebar() {
       </SidebarHeader>
       <SidebarContent className="mt-4">
         <SidebarGroup className="space-y-4">
-          <Link className="flex" href="/">
-            <HomeIcon className="mr-2" />
-            Home
-          </Link>
-          <Link className="flex" href="/chart">
-            <ChartLine className="mr-2" />
-            Chart
-          </Link>
+          <SidebarMenuButton asChild>
+            <Link className="flex items-center gap-2" href="/">
+              <HomeIcon className="h-4 w-4" />
+              <span>Inicio</span>
+            </Link>
+          </SidebarMenuButton>
+          <SidebarMenuButton asChild>
+            <Link className="flex items-center gap-2" href="/chart">
+              <ChartLine className="h-4 w-4" />
+              <span>Simulación</span>
+            </Link>
+          </SidebarMenuButton>
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>

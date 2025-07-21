@@ -8,6 +8,15 @@
   justify-content: center;
   font-family: "Times New Roman", serif;
   line-height: 1;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+@media (max-width: 640px) {
+  .math-display {
+    gap: 0.15rem;
+    flex-wrap: wrap;
+  }
 }
 
 .math-fraction {
@@ -16,22 +25,46 @@
   vertical-align: middle;
   text-align: center;
   position: relative;
-  margin: 0 0.3em;
+  margin: 0 0.2em;
+  min-width: fit-content;
+}
+
+@media (max-width: 640px) {
+  .math-fraction {
+    margin: 0 0.1em;
+  }
 }
 
 .math-numerator {
   display: block;
-  border-bottom: 2px solid currentColor;
-  padding-bottom: 0.2em;
-  margin-bottom: 0.1em;
+  border-bottom: 1.5px solid currentColor;
+  padding-bottom: 0.15em;
+  margin-bottom: 0.05em;
   font-style: italic;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .math-numerator {
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 0.1em;
+    margin-bottom: 0.05em;
+  }
 }
 
 .math-denominator {
   display: block;
-  padding-top: 0.2em;
-  margin-top: 0.1em;
+  padding-top: 0.15em;
+  margin-top: 0.05em;
   font-style: italic;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .math-denominator {
+    padding-top: 0.1em;
+    margin-top: 0.05em;
+  }
 }
 
 .math-equation em {
@@ -47,6 +80,13 @@
 .math-equation sup {
   font-size: 0.6em;
   vertical-align: super;
+}
+
+@media (max-width: 640px) {
+  .math-equation sub,
+  .math-equation sup {
+    font-size: 0.5em;
+  }
 }
 
 @custom-variant dark (&:is(.dark *));

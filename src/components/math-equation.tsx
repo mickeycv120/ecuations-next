@@ -17,17 +17,17 @@ export function MathEquation({ equation, className = "" }: MathEquationProps) {
 // Componente específico para las ecuaciones del SIR
 export function SIREquations() {
   return (
-    <div className="bg-gradient-to-r from-gray-900 via-slate-800 to-gray-900 text-white p-10 rounded-xl shadow-2xl mb-8 max-w-4xl mx-auto border border-gray-600">
-      <div className="space-y-6">
-        <div className="text-center text-gray-300 text-lg font-semibold mb-8 tracking-wide">
+    <div className="bg-gradient-to-r from-gray-900 via-slate-800 to-gray-900 text-white p-4 sm:p-6 lg:p-10 rounded-xl shadow-2xl mb-6 sm:mb-8 max-w-4xl mx-auto border border-gray-600">
+      <div className="space-y-4 sm:space-y-6">
+        <div className="text-center text-gray-300 text-sm sm:text-base lg:text-lg font-semibold mb-4 sm:mb-8 tracking-wide">
           SISTEMA DE ECUACIONES DIFERENCIALES ORDINARIAS
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-6 sm:space-y-8">
           {/* Ecuación 1: dS/dt */}
-          <div className="bg-blue-900/30 border-l-4 border-blue-400 pl-8 py-6 rounded-r-lg">
+          <div className="bg-blue-900/30 border-l-2 sm:border-l-4 border-blue-400 pl-4 sm:pl-8 py-4 sm:py-6 rounded-r-lg">
             <div className="flex items-center justify-center">
-              <div className="math-display text-3xl">
+              <div className="math-display text-lg sm:text-2xl lg:text-3xl">
                 <span className="math-fraction">
                   <span className="math-numerator text-blue-300">
                     d<em>S</em>
@@ -36,9 +36,9 @@ export function SIREquations() {
                     d<em>t</em>
                   </span>
                 </span>
-                <span className="text-white mx-4">=</span>
+                <span className="text-white mx-2 sm:mx-4">=</span>
                 <span className="text-red-300">−β</span>
-                <span className="math-fraction mx-3">
+                <span className="math-fraction mx-2 sm:mx-3">
                   <span className="math-numerator">
                     <span className="text-blue-300">
                       <em>S</em>
@@ -51,15 +51,17 @@ export function SIREquations() {
                     <em>N</em>
                   </span>
                 </span>
-                <span className="text-gray-400 ml-4 text-lg">(1)</span>
+                <span className="text-gray-400 ml-2 sm:ml-4 text-sm sm:text-lg">
+                  (1)
+                </span>
               </div>
             </div>
           </div>
 
           {/* Ecuación 2: dI/dt */}
-          <div className="bg-red-900/30 border-l-4 border-red-400 pl-8 py-6 rounded-r-lg">
+          <div className="bg-red-900/30 border-l-2 sm:border-l-4 border-red-400 pl-4 sm:pl-8 py-4 sm:py-6 rounded-r-lg">
             <div className="flex items-center justify-center">
-              <div className="math-display text-3xl">
+              <div className="math-display text-lg sm:text-2xl lg:text-3xl">
                 <span className="math-fraction">
                   <span className="math-numerator text-red-300">
                     d<em>I</em>
@@ -68,9 +70,9 @@ export function SIREquations() {
                     d<em>t</em>
                   </span>
                 </span>
-                <span className="text-white mx-4">=</span>
+                <span className="text-white mx-2 sm:mx-4">=</span>
                 <span className="text-red-300">β</span>
-                <span className="math-fraction mx-3">
+                <span className="math-fraction mx-2 sm:mx-3">
                   <span className="math-numerator">
                     <span className="text-blue-300">
                       <em>S</em>
@@ -83,20 +85,22 @@ export function SIREquations() {
                     <em>N</em>
                   </span>
                 </span>
-                <span className="text-white mx-3">−</span>
+                <span className="text-white mx-2 sm:mx-3">−</span>
                 <span className="text-green-300">γ</span>
-                <span className="text-red-300 ml-2">
+                <span className="text-red-300 ml-1 sm:ml-2">
                   <em>I</em>
                 </span>
-                <span className="text-gray-400 ml-4 text-lg">(2)</span>
+                <span className="text-gray-400 ml-2 sm:ml-4 text-sm sm:text-lg">
+                  (2)
+                </span>
               </div>
             </div>
           </div>
 
           {/* Ecuación 3: dR/dt */}
-          <div className="bg-green-900/30 border-l-4 border-green-400 pl-8 py-6 rounded-r-lg">
+          <div className="bg-green-900/30 border-l-2 sm:border-l-4 border-green-400 pl-4 sm:pl-8 py-4 sm:py-6 rounded-r-lg">
             <div className="flex items-center justify-center">
-              <div className="math-display text-3xl">
+              <div className="math-display text-lg sm:text-2xl lg:text-3xl">
                 <span className="math-fraction">
                   <span className="math-numerator text-green-300">
                     d<em>R</em>
@@ -105,18 +109,20 @@ export function SIREquations() {
                     d<em>t</em>
                   </span>
                 </span>
-                <span className="text-white mx-4">=</span>
+                <span className="text-white mx-2 sm:mx-4">=</span>
                 <span className="text-green-300">γ</span>
-                <span className="text-red-300 ml-2">
+                <span className="text-red-300 ml-1 sm:ml-2">
                   <em>I</em>
                 </span>
-                <span className="text-gray-400 ml-4 text-lg">(3)</span>
+                <span className="text-gray-400 ml-2 sm:ml-4 text-sm sm:text-lg">
+                  (3)
+                </span>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="text-center text-gray-400 text-sm mt-8 italic border-t border-gray-600 pt-6">
+        <div className="text-center text-gray-400 text-xs sm:text-sm mt-6 sm:mt-8 italic border-t border-gray-600 pt-4 sm:pt-6">
           Modelo SIR adaptado para propagación de malware en redes digitales
         </div>
       </div>
@@ -127,23 +133,23 @@ export function SIREquations() {
 // Componente para R₀
 export function R0Equation() {
   return (
-    <div className="bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 backdrop-blur-sm rounded-xl shadow-2xl p-10 mb-8 border border-purple-300/20">
+    <div className="bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 backdrop-blur-sm rounded-xl shadow-2xl p-6 sm:p-8 lg:p-10 mb-6 sm:mb-8 border border-purple-300/20">
       <div className="text-center">
-        <div className="text-gray-300 text-lg font-semibold mb-6 tracking-wider uppercase">
+        <div className="text-gray-300 text-sm sm:text-base lg:text-lg font-semibold mb-4 sm:mb-6 tracking-wider uppercase">
           Número Básico de Reproducción
         </div>
-        <div className="bg-white/10 rounded-lg p-8 mb-4">
-          <div className="math-display text-6xl font-bold mb-4 text-yellow-300 tracking-wider">
+        <div className="bg-white/10 rounded-lg p-4 sm:p-6 lg:p-8 mb-4">
+          <div className="math-display text-3xl sm:text-4xl lg:text-6xl font-bold mb-2 sm:mb-4 text-yellow-300 tracking-wider">
             <em>R</em>
-            <sub className="text-4xl">0</sub>
-            <span className="text-white mx-4">=</span>
+            <sub className="text-xl sm:text-2xl lg:text-4xl">0</sub>
+            <span className="text-white mx-2 sm:mx-4">=</span>
             <span className="math-fraction">
               <span className="math-numerator text-red-300">β</span>
               <span className="math-denominator text-green-300">γ</span>
             </span>
           </div>
-          <div className="h-px bg-gradient-to-r from-transparent via-white/30 to-transparent my-6"></div>
-          <p className="text-lg text-blue-100 leading-relaxed">
+          <div className="h-px bg-gradient-to-r from-transparent via-white/30 to-transparent my-3 sm:my-6"></div>
+          <p className="text-sm sm:text-base lg:text-lg text-blue-100 leading-relaxed px-2">
             Número promedio de infecciones secundarias producidas por un sistema
             infectado en una población completamente susceptible
           </p>
@@ -156,26 +162,28 @@ export function R0Equation() {
 // Componente para las ecuaciones de Euler
 export function EulerEquations() {
   return (
-    <div className="bg-gradient-to-r from-slate-900 via-gray-900 to-slate-900 text-white p-8 rounded-xl shadow-2xl border border-slate-600">
-      <h3 className="font-bold text-blue-300 mb-6 text-xl text-center tracking-wide">
+    <div className="bg-gradient-to-r from-slate-900 via-gray-900 to-slate-900 text-white p-4 sm:p-6 lg:p-8 rounded-xl shadow-2xl border border-slate-600">
+      <h3 className="font-bold text-blue-300 mb-4 sm:mb-6 text-lg sm:text-xl text-center tracking-wide">
         🧮 MÉTODO DE EULER EXPLÍCITO
       </h3>
-      <p className="text-gray-300 mb-8 text-center">
+      <p className="text-gray-300 mb-6 sm:mb-8 text-center text-sm sm:text-base">
         Discretización temporal de primer orden con paso fijo Δt:
       </p>
 
-      <div className="space-y-6">
+      <div className="space-y-4 sm:space-y-6">
         {/* Ecuación para Susceptibles */}
-        <div className="bg-blue-900/20 border border-blue-500/30 p-6 rounded-lg">
-          <div className="text-blue-300 font-semibold mb-4 text-center">
+        <div className="bg-blue-900/20 border border-blue-500/30 p-4 sm:p-6 rounded-lg">
+          <div className="text-blue-300 font-semibold mb-3 sm:mb-4 text-center text-sm sm:text-base">
             Susceptibles:
           </div>
-          <div className="math-display text-2xl justify-center">
+          <div className="math-display text-lg sm:text-xl lg:text-2xl justify-center">
             <span className="text-blue-200">
               <em>S</em>
             </span>
-            <sub className="text-blue-400 text-lg">n+1</sub>
-            <span className="text-white mx-3">=</span>
+            <sub className="text-blue-400 text-sm sm:text-base lg:text-lg">
+              n+1
+            </sub>
+            <span className="text-white mx-2 sm:mx-3">=</span>
             <span className="text-blue-200">
               <em>S</em>
             </span>
