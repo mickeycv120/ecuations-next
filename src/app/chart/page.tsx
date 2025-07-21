@@ -70,7 +70,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export function ChartLineDefault() {
+export default function ChartPage() {
   // Estados para la simulación en tiempo real
   const [currentData, setCurrentData] = useState<
     Array<{
@@ -283,8 +283,4 @@ export function ChartLineDefault() {
       </Card>
     </div>
   );
-}
-
-export default function ChartPage() {
-  return <ChartLineDefault />;
 }
