@@ -18,36 +18,68 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 
-// Parámetros del modelo SIR para virus informático
-const POPULATION = 10000; // Total de computadoras
-const BETA = 0.6; // Tasa de transmisión alta (porque no hay antivirus)
-const GAMMA = 0.1; // Tasa de recuperación baja (porque se tarda en detectar)
-const TIME_STEPS = 300; // Más pasos para mayor detalle y velocidad
-const DT = 0.5; // Paso más pequeño para mayor suavidad
+// ==========================================
+// PARÁMETROS DEL MODELO SIR PARA VIRUS INFORMÁTICO
+// ==========================================
+const POPULATION = 10000; // N: Total de computadoras en la red
+const BETA = 0.6; // β: Tasa de transmisión (0.6 = 60% prob. infección por contacto)
+const GAMMA = 0.1; // γ: Tasa de recuperación (0.1 = 10 días promedio para limpiar)
+const TIME_STEPS = 300; // Número máximo de pasos de simulación
+const DT = 0.5; // Δt: Paso temporal en días (0.5 = 12 horas)
 
-// Función para calcular un solo paso de la simulación
+// Función para calcular un solo paso de la simulación usando el Método de Euler
 function calculateNextStep(S: number, I: number, R: number, time: number) {
-  // Ecuaciones diferenciales del modelo SIR:
-  // dS/dt = -β * S * I / N
-  // dI/dt = β * S * I / N - γ * I
-  // dR/dt = γ * I
+  // ==========================================
+  // SISTEMA DE ECUACIONES DIFERENCIALES SIR
+  // ==========================================
+  // El modelo SIR describe la dinámica de una epidemia mediante 3 ecuaciones acopladas:
 
+  // 1) dS/dt = -β * S * I / N
+  //    La población susceptible DISMINUYE proporcionalmente al contacto entre S e I
+  //    β: probabilidad de transmisión por contacto
+  //    S*I/N: frecuencia de encuentros infectivos en la población
   const dS_dt = (-BETA * S * I) / POPULATION;
+
+  // 2) dI/dt = β * S * I / N - γ * I
+  //    La población infectada CAMBIA por dos procesos:
+  //    (+) Nuevas infecciones: β * S * I / N (mismo término que en dS/dt)
+  //    (-) Recuperaciones: γ * I (proporcional a infectados actuales)
   const dI_dt = (BETA * S * I) / POPULATION - GAMMA * I;
+
+  // 3) dR/dt = γ * I
+  //    La población recuperada AUMENTA solo por las recuperaciones
+  //    γ: tasa de recuperación (1/γ = tiempo promedio de infección)
   const dR_dt = GAMMA * I;
 
-  // Método de Euler para actualizar las variables
+  // Método de Euler para integración numérica:
+  // x_{n+1} = x_n + f(x_n) * Δt
+  // Donde f(x_n) son las derivadas calculadas arriba
+
+  // Actualizar Susceptibles: S_{n+1} = S_n + (dS/dt) * Δt
+  // Math.max(0, ...) evita valores negativos por errores numéricos
   const newS = Math.max(0, S + dS_dt * DT);
+
+  // Actualizar Infectados: I_{n+1} = I_n + (dI/dt) * Δt
+  // Esta es la población más dinámica (puede crecer y decrecer)
   const newI = Math.max(0, I + dI_dt * DT);
+
+  // Actualizar Recuperados: R_{n+1} = R_n + (dR/dt) * Δt
+  // Solo puede crecer (monotónicamente creciente)
   const newR = Math.max(0, R + dR_dt * DT);
 
+  // ==========================================
+  // VALIDACIÓN Y RETORNO DE RESULTADOS
+  // ==========================================
+  // Invariante del modelo: S + I + R = N (conservación de población)
+  // En implementaciones reales, pequeños errores numéricos pueden violar esto
+
   return {
-    time: parseFloat(time.toFixed(1)),
-    susceptible: Math.round(newS),
-    infected: Math.round(newI),
-    recovered: Math.round(newR),
-    S: newS,
-    I: newI,
+    time: parseFloat(time.toFixed(1)), // Tiempo actual (redondeado para claridad)
+    susceptible: Math.round(newS), // S(t+Δt) - para visualización
+    infected: Math.round(newI), // I(t+Δt) - para visualización
+    recovered: Math.round(newR), // R(t+Δt) - para visualización
+    S: newS, // Valores exactos para siguiente iteración
+    I: newI, // (mayor precisión numérica)
     R: newR,
   };
 }
