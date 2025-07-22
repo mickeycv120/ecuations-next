@@ -431,60 +431,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Predicciones del Modelo */}
-        <section className="bg-white rounded-xl shadow-lg border p-6 sm:p-8 lg:p-10">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">
-            📈 Predicciones Clave del Modelo
-          </h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            <div className="bg-red-50 border border-red-200 p-4 sm:p-6 rounded-lg text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-red-600 mb-2">
-                ~7,200
-              </div>
-              <div className="text-red-800 font-semibold text-sm sm:text-base">
-                Pico de Infección
-              </div>
-              <div className="text-red-600 text-xs sm:text-sm mt-2">
-                Máximo número de sistemas comprometidos simultáneamente
-              </div>
-            </div>
-            <div className="bg-blue-50 border border-blue-200 p-4 sm:p-6 rounded-lg text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-blue-600 mb-2">
-                8-10
-              </div>
-              <div className="text-blue-800 font-semibold text-sm sm:text-base">
-                Días al Pico
-              </div>
-              <div className="text-blue-600 text-xs sm:text-sm mt-2">
-                Tiempo hasta alcanzar el máximo de infectados
-              </div>
-            </div>
-            <div className="bg-green-50 border border-green-200 p-4 sm:p-6 rounded-lg text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-green-600 mb-2">
-                ~60
-              </div>
-              <div className="text-green-800 font-semibold text-sm sm:text-base">
-                Duración Total
-              </div>
-              <div className="text-green-600 text-xs sm:text-sm mt-2">
-                Días hasta extinción práctica de la epidemia
-              </div>
-            </div>
-            <div className="bg-purple-50 border border-purple-200 p-4 sm:p-6 rounded-lg text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-purple-600 mb-2">
-                72%
-              </div>
-              <div className="text-purple-800 font-semibold text-sm sm:text-base">
-                Ataque Total
-              </div>
-              <div className="text-purple-600 text-xs sm:text-sm mt-2">
-                Fracción final de la población infectada
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Aplicaciones */}
         <section className="bg-white rounded-xl shadow-lg border p-6 sm:p-8 lg:p-10">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">
