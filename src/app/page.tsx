@@ -518,7 +518,7 @@ export default function HomePage() {
             <p className="text-orange-800 text-center text-sm sm:text-base">
               <strong>Nota:</strong> A pesar de estas limitaciones, el modelo
               SIR proporciona
-              <em>insights</em> valiosos y sirve como base para modelos más
+              <em> insights</em> valiosos y sirve como base para modelos más
               sofisticados.
             </p>
           </div>
