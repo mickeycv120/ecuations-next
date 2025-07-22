@@ -152,49 +152,139 @@ export default function HomePage() {
         {/* Interpretación de las Ecuaciones */}
         <section className="bg-white rounded-xl shadow-lg border p-6 sm:p-8 lg:p-10">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">
-            Interpretación Física de las Ecuaciones
+            ¿Qué nos dicen las Ecuaciones?
           </h2>
 
           <div className="space-y-6 sm:space-y-8">
             <div className="border-l-4 sm:border-l-8 border-blue-500 bg-blue-50 p-4 sm:p-6 rounded-r-lg">
               <h3 className="font-bold text-blue-800 mb-2 sm:mb-3 text-lg sm:text-xl">
-                📉 Ecuación de Susceptibles: dS/dt = -β × S × I / N
+                💻 ¿Cómo disminuyen los sistemas vulnerables?
+                <span className="math-display inline-flex items-center ml-2">
+                  <span className="math-fraction">
+                    <span className="math-numerator text-blue-800">
+                      d<em>S</em>
+                    </span>
+                    <span className="math-denominator text-blue-800">
+                      d<em>t</em>
+                    </span>
+                  </span>
+                  <span className="mx-2">=</span>
+                  <span className="text-red-600">-β</span>
+                  <span className="math-fraction mx-1">
+                    <span className="math-numerator">
+                      <span className="text-blue-800">
+                        <em>S</em>
+                      </span>
+                      <span className="text-red-600">
+                        <em>I</em>
+                      </span>
+                    </span>
+                    <span className="math-denominator text-yellow-600">
+                      <em>N</em>
+                    </span>
+                  </span>
+                </span>
               </h3>
               <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-                La derivada negativa indica que el número de sistemas
-                susceptibles <em>decrece monotónicamente</em>. La tasa de
-                disminución es proporcional al producto S×I (ley de acción de
-                masas), representando la probabilidad de encuentros infectivos
-                en la red.
+                Esta ecuación nos dice que{" "}
+                <strong>
+                  mientras más computadoras infectadas haya, más rápido se
+                  infectan las vulnerables
+                </strong>
+                . Es como un contagio: si hay muchos sistemas con virus cerca de
+                sistemas sin protección, la infección se extiende más rápido. El
+                signo negativo (-) significa que los sistemas susceptibles van
+                disminuyendo.
               </p>
             </div>
 
             <div className="border-l-4 sm:border-l-8 border-red-500 bg-red-50 p-4 sm:p-6 rounded-r-lg">
               <h3 className="font-bold text-red-800 mb-2 sm:mb-3 text-lg sm:text-xl">
-                📈 Ecuación de Infectadas: dI/dt = β × S × I / N - γ × I
+                🦠 ¿Cómo cambia el número de sistemas infectados?
+                <span className="math-display inline-flex items-center ml-2 mt-4">
+                  <span className="math-fraction">
+                    <span className="math-numerator text-red-800">
+                      d<em>I</em>
+                    </span>
+                    <span className="math-denominator text-red-800">
+                      d<em>t</em>
+                    </span>
+                  </span>
+                  <span className="mx-2">=</span>
+                  <span className="text-red-600">β</span>
+                  <span className="math-fraction mx-1">
+                    <span className="math-numerator">
+                      <span className="text-blue-800">
+                        <em>S</em>
+                      </span>
+                      <span className="text-red-800">
+                        <em>I</em>
+                      </span>
+                    </span>
+                    <span className="math-denominator text-yellow-600">
+                      <em>N</em>
+                    </span>
+                  </span>
+                  <span className="mx-2">−</span>
+                  <span className="text-green-600">γ</span>
+                  <span className="text-red-800 ml-1">
+                    <em>I</em>
+                  </span>
+                </span>
               </h3>
               <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-                Ecuación de balance con dos términos competitivos: el{" "}
-                <strong>flujo de entrada</strong>
-                βSI/N (nuevas infecciones) y el <strong>
-                  flujo de salida
-                </strong>{" "}
-                γI (recuperaciones). El signo de dI/dt determina si la epidemia
-                crece o decrece localmente.
+                Esta ecuación tiene dos partes:{" "}
+                <strong>nuevas infecciones</strong> (primer término) y{" "}
+                <strong>recuperaciones</strong> (segundo término). Es como una
+                balanza: si llegan más computadoras infectadas de las que se
+                limpian, el número total de infectadas sube. Si se limpian más
+                de las que se infectan, el número baja.
               </p>
             </div>
 
             <div className="border-l-4 sm:border-l-8 border-green-500 bg-green-50 p-4 sm:p-6 rounded-r-lg">
               <h3 className="font-bold text-green-800 mb-2 sm:mb-3 text-lg sm:text-xl">
-                📊 Ecuación de Recuperadas: dR/dt = γ × I
+                🛡️ ¿Cómo aumentan los sistemas protegidos?
+                <span className="math-display inline-flex items-center ml-2">
+                  <span className="math-fraction">
+                    <span className="math-numerator text-green-800">
+                      d<em>R</em>
+                    </span>
+                    <span className="math-denominator text-green-800">
+                      d<em>t</em>
+                    </span>
+                  </span>
+                  <span className="mx-2">=</span>
+                  <span className="text-green-600">γ</span>
+                  <span className="text-red-600 ml-1">
+                    <em>I</em>
+                  </span>
+                </span>
               </h3>
               <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-                La población recuperada <em>aumenta monotónicamente</em> a una
-                tasa directamente proporcional al número actual de infectados. γ
-                representa la eficacia del proceso de detección y limpieza del
-                malware.
+                Esta es la más simple:{" "}
+                <strong>
+                  mientras más computadoras infectadas tengamos, más se van
+                  limpiando y protegiendo
+                </strong>
+                . Es como un equipo de IT trabajando: mientras más trabajo
+                (sistemas infectados) tengan, más sistemas van limpiando y
+                actualizando para que no se vuelvan a infectar.
               </p>
             </div>
+          </div>
+
+          <div className="mt-6 sm:mt-8 bg-gray-100 p-4 sm:p-6 rounded-lg border">
+            <h4 className="font-bold text-gray-800 mb-3 text-center">
+              🎯 Resumen en palabras simples
+            </h4>
+            <p className="text-gray-700 text-center text-sm sm:text-base">
+              Las ecuaciones nos muestran cómo el virus se extiende por la red:{" "}
+              <strong>los sistemas vulnerables se van infectando</strong>,
+              <strong>los infectados pueden recuperarse</strong>, y{" "}
+              <strong>los recuperados quedan protegidos</strong>. Es un ciclo
+              continuo hasta que no quedan más sistemas por infectar.
+            </p>
           </div>
         </section>
 
@@ -210,7 +300,7 @@ export default function HomePage() {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-gradient-to-br from-yellow-900/40 to-orange-900/40 backdrop-blur-sm rounded-xl p-6 border border-yellow-400/30">
                 <h3 className="font-bold text-xl mb-4 text-yellow-200 flex items-center">
-                  � Ejemplo Numérico
+                  🔢 Ejemplo Numérico
                 </h3>
                 <div className="bg-black/30 rounded-lg p-4 font-mono text-lg space-y-2">
                   <div className="flex justify-between items-center">

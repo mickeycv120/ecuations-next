@@ -147,6 +147,13 @@ export function R0Equation() {
               <span className="math-numerator text-red-300">β</span>
               <span className="math-denominator text-green-300">γ</span>
             </span>
+            <span className="text-white mx-2 sm:mx-4">×</span>
+            <span className="text-blue-300">
+              <em>S</em>
+              <sub className="text-blue-400 text-xl sm:text-2xl lg:text-3xl">
+                0
+              </sub>
+            </span>
           </div>
           <div className="h-px bg-gradient-to-r from-transparent via-white/30 to-transparent my-3 sm:my-6"></div>
           <p className="text-sm sm:text-base lg:text-lg text-blue-100 leading-relaxed px-2">
