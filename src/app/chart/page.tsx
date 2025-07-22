@@ -22,7 +22,7 @@ import {
 const POPULATION = 10000; // Total de computadoras
 const BETA = 0.6; // Tasa de transmisión alta (porque no hay antivirus)
 const GAMMA = 0.1; // Tasa de recuperación baja (porque se tarda en detectar)
-const TIME_STEPS = 200; // Más pasos para mayor detalle y velocidad
+const TIME_STEPS = 300; // Más pasos para mayor detalle y velocidad
 const DT = 0.5; // Paso más pequeño para mayor suavidad
 
 // Función para calcular un solo paso de la simulación
